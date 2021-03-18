@@ -26,5 +26,8 @@ namespace WebApplication11
         }
     
         public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<User> User { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication11.Models.Membership> Memberships { get; set; }
     }
 }
