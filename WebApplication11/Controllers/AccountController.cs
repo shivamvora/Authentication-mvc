@@ -20,5 +20,21 @@ namespace WebApplication11.Controllers
         {
             return View();
         }
+
+        public ActionResult Signup()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Signup(User model)
+        {
+            using(var context = new OfficeEntities())
+            {
+                context.User.Add(model);
+                context.SaveChanges();
+            }
+            return RedirectToAction("login");
+        }
     }
 }
